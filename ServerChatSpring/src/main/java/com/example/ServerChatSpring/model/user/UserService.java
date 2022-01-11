@@ -17,4 +17,12 @@ public class UserService {
     public List<User> getUsers() {
         return userRepository.findAll();
     }
+
+    public void addUser(User user) {
+        if (userRepository.findUserById(user.getUserId()).isPresent()){
+            throw new IllegalStateException("This user already exists. BorpaSpim");
+        }else {
+            userRepository.save(user);
+        }
+    }
 }

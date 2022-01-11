@@ -15,4 +15,8 @@ public class MsgService {
     public List<Msg> getMsgs() {
         return msgRepository.findAll();
     }
+
+    public void addMsg(Msg msg) {
+        msgRepository.save(msg);
+    }
 }

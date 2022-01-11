@@ -9,8 +9,9 @@ import java.util.Date;
 public class Msg {
     @Id
     @Column(name = "msgid")
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int msgId;
-    @Column(name = "userid_fk")
+    @Column(name = "useridfk")
     private Integer userIdFk;
     private String text;
     private String date;
@@ -19,10 +20,10 @@ public class Msg {
     public Msg() {
     }
 
-    public Msg(int userIdFk, String text) {
+    public Msg(Integer userIdFk, String text, String date) {
         this.userIdFk = userIdFk;
         this.text = text;
-        this.date = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(new Date());
+        this.date = date;
     }
 
     public int getMsgId() {
