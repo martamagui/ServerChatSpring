@@ -8,14 +8,18 @@ import java.util.Date;
 @Table
 public class Msg {
     @Id
-    @Column(name = "msgId")
+    @Column(name = "msgid")
     private int msgId;
-    @Column(name = "userId_FK")
+    @Column(name = "userid_fk")
     private Integer userIdFk;
     private String text;
     private String date;
 
-    public Msg(int userIdFk, String text, String date) {
+    //Es necesario siempre un constructor vacio
+    public Msg() {
+    }
+
+    public Msg(int userIdFk, String text) {
         this.userIdFk = userIdFk;
         this.text = text;
         this.date = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(new Date());
