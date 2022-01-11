@@ -7,7 +7,7 @@ USE chatAndroid;
 DROP TABLE IF EXISTS msg;
 DROP TABLE IF EXISTS users;
 CREATE TABLE `msg` (
-  `msgId` int(255) COLLATE latin1_spanish_ci NOT NULL AUTO_INCREMENT,
+  `msgId` int NOT NULL AUTO_INCREMENT,
   `userId_FK` int(255) COLLATE latin1_spanish_ci NOT NULL,
   `text` varchar(255) COLLATE latin1_spanish_ci DEFAULT NULL,
   `date` varchar(255) COLLATE latin1_spanish_ci DEFAULT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE `msg` (
   FOREIGN KEY (`userId_FK`) REFERENCES user(`userId`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1 COLLATE = latin1_spanish_ci;
 CREATE TABLE `users` (
-  `userId` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
+  `userId` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`userId`)
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1 COLLATE = latin1_spanish_ci;
