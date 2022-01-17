@@ -12,7 +12,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`userId`)
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1 COLLATE = latin1_spanish_ci;
 CREATE TABLE `msg` (
-  `msgId` int NOT NULL AUTO_INCREMENT,
+  `msgId` int,
   `userIdFK` int(255) COLLATE latin1_spanish_ci NOT NULL,
   `text` TEXT COLLATE latin1_spanish_ci DEFAULT NULL,
   `date` varchar(255) COLLATE latin1_spanish_ci DEFAULT NULL,

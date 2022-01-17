@@ -11,16 +11,18 @@ public class MsgController {
     public MsgService msgService;
 
     @Autowired
-    public MsgController(MsgService msgService){
-        this.msgService=msgService;
+    public MsgController(MsgService msgService) {
+        this.msgService = msgService;
     }
+
     @GetMapping
-    public List<Msg> getMsgs(){
+    public List<Msg> getMsgs() {
         return msgService.getMsgs();
     }
 
     @PostMapping
-    public void addMsg(@RequestBody Msg msg){
+    public List<Msg> addMsg(@RequestBody Msg msg) {
         msgService.addMsg(msg);
+        return msgService.getMsgs();
     }
 }

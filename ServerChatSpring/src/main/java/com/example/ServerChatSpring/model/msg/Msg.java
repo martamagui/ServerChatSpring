@@ -20,7 +20,8 @@ public class Msg {
     public Msg() {
     }
 
-    public Msg(Integer userIdFk, String text, String date) {
+    public Msg(int msgId, Integer userIdFk, String text, String date) {
+        this.msgId = msgId;
         this.userIdFk = userIdFk;
         this.text = text;
         this.date = date;
